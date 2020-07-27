@@ -14,6 +14,12 @@ public class TriesDriver {
 		System.out.println(tries.isPrefix("flow"));
 		System.out.println(tries.isPrefix("flo"));
 		System.out.println(tries.isPrefix("flown"));
+		
+		Tries longestCommonPrefixTrie = new Tries();
+		longestCommonPrefixTrie.addNode("boys");
+		longestCommonPrefixTrie.addNode("boolean");
+		
+		System.out.println(longestCommonPrefixTrie.longestCommonPrefix());
 	}
 
 }

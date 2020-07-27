@@ -41,6 +41,40 @@ public class Tries {
 		
 		return tempNode != null;
 	}
+	
+	public String longestCommonPrefix() {
+	    if(root == null) return "";
+	    StringBuilder ans = new StringBuilder();
+	    TrieNode tempNode = root;
+	    while(tempNode != null) {
+	        if(hasOnlyOneChild(tempNode)) {
+	            char childNode = getChildNode(tempNode);
+	            ans.append(childNode);
+	            tempNode = tempNode.children[childNode - 'a'];
+	        } else {
+	            return ans.toString();
+	        }
+	    }
+	    return ans.toString();
+	}
+	
+	private boolean hasOnlyOneChild(TrieNode temp) {
+	    if(temp == null) return false;
+	    
+	    int count = 0;
+	    for(int i = 0; i < temp.children.length; i++) {
+	        if(temp.children[i] != null) count++;
+	    }
+	    return count == 1;
+	}
+	
+	private char getChildNode(TrieNode temp) {
+	    if(temp == null) return '\u0000';
+	    for(int i = 0; i < temp.children.length; i++) {
+	        if(temp.children[i] != null) return (char)(i + 'a');
+	    }
+	    return '\u0000';
+	}
 
 }
 
