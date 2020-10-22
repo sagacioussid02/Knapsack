@@ -2,8 +2,8 @@ package algorithms.gayle.linkedlist;
 
 public class LinkedListNode {
 	
-	int val;
-	LinkedListNode next;
+	public int val;
+	public LinkedListNode next;
 	
 	public LinkedListNode(int val) {
 		this.val = val;

@@ -17,5 +17,16 @@ public class AdditionsOfTwoFractions {
         int denom = (b * d);
         return new int[] {numerator, denom};
     }
+    
+    public static int gcd(int num1, int num2) {
+        int t;
+        while (num2 != 0) {
+        t = num2;
+        num2 = num1 % num2;
+        num1 = t;
+        }
+          
+        return num1;
+    }
 
 }
